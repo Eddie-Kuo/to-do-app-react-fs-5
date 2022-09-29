@@ -13,7 +13,6 @@ export default function Auth() {
   const clickHandler = async () => {
     // call auth user with state
     const userResponse = await authUser(email, password, type);
-    console.log(userResponse);
     // set user
     setUser(userResponse);
     // reset inputs
