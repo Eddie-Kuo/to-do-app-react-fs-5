@@ -1,0 +1,13 @@
+header {
+    height: 8vh;
+    width: 100%;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* space-evenly */
+}
+
+header h2 {
+    margin: 0;
+}
