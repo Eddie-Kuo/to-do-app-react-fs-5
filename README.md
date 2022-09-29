@@ -5,8 +5,8 @@
     - information will be added into the header + logout button if a user exists. logical && operator
 
 2) Set up the Auth component to receive user inputs 
-    - /Auth/Sign-in or Sign-up
-    - basic html and css to make the page functional
+    <!-- - /Auth/Sign-in or Sign-up
+    - basic html and css to make the page functional -->
     - set up auth functions within Services folder - this will store user data with supabase rls
     - clickHandler for when the inputs are filled out 
         - if user signs in and account exists, Redirect them to their list

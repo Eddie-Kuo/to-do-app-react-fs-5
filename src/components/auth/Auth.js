@@ -5,9 +5,10 @@ export default function Auth() {
     <div className='auth'>
       <div className="tabs">
         <h3>Sign In</h3>
+        {/* these need to be nav links  */}
         <h3>Sign Out</h3>
       </div>
-      <form className='form'>
+      <div className='form'>
         <div className='form-controls'>
           <label>
             Email:
@@ -21,7 +22,7 @@ export default function Auth() {
           <input type="password"></input>
         </div>
         <button>Submit</button>
-      </form>
+      </div>
     </div>
   );
 }
