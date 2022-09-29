@@ -1,0 +1,21 @@
+.todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50vh;
+    border: 1px solid black;
+}
+
+.todo-form {
+    display: flex;
+    flex-direction: row;
+    gap: 2vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

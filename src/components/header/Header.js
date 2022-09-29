@@ -17,7 +17,7 @@ export default function Header() {
       <h2>Alchemy To Do List</h2>
       {user && (
         <>
-          <div>Hello, {user.email}</div>
+          <div className='greeting'>Hello, {user.email}</div>
           <button onClick={handleClick} >Logout</button>
         </>
       )}

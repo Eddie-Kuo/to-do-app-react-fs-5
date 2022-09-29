@@ -3,11 +3,25 @@
     width: 100%;
     background-color: aquamarine;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
-    /* space-evenly */
 }
 
 .header h2 {
     margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2vh;
+}
+
+.header button {
+    margin: 2vh;
+}
+
+.greeting {
+    position: absolute;
+    right: 0;
+    left: 0;
+    
 }
