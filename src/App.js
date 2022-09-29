@@ -3,6 +3,7 @@ import { Switch } from 'react-router-dom';
 import './App.css';
 import Auth from './components/auth/Auth';
 import Header from './components/header/Header';
+import Todo from './components/todo/Todo';
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
       <Header />
       
       <Switch>
-        <Route path="/auth/:sign-in" component={Auth}></Route>
-        <Route path="/auth/:sign-out" component={Auth}></Route>
+        <Route path="/auth/:type" component={Auth}></Route>
+        {/* <Route path="/auth/:sign-up" component={Auth}></Route> */}
+        <Route path="/todo" component={Todo}></Route>
       </Switch>
     </div>
   );
