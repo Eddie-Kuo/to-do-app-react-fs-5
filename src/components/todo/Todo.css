@@ -1,21 +1,32 @@
-.todo {
+
+.todo-form {
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    gap: 1vh;
+}
+
+.container {
+    border: .5px solid black;
+    margin: 2vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 50vh;
-    border: 1px solid black;
 }
 
-.todo-form {
-    display: flex;
-    flex-direction: row;
-    gap: 2vh;
+.container h3 {
+    margin: 2vh;
 }
 
-.container {
+.todo {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.todo p {
+    margin: 1.5vh;
 }
