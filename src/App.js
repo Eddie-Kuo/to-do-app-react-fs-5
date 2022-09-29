@@ -1,11 +1,12 @@
 import './App.css';
+import Auth from './components/auth/Auth';
 import Header from './components/header/Header';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <div>hello world!</div>
+      <Auth />
     </div>
   );
 }

@@ -1,0 +1,28 @@
+
+.auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid black; */
+    width: 50vh;
+    /* padding: 2vh; */
+}
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+    gap: 5vh;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.form-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2vh;
+}
