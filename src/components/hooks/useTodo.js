@@ -15,5 +15,5 @@ export function useTodo() {
     loadData();
   }, []);
 
-  return { todos };
+  return { todos, setTodos };
 }

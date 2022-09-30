@@ -7,7 +7,7 @@ import './Todo.css';
 
 
 export default function Todo() {
-  const { todos } = useTodo();
+  const { todos, setTodos } = useTodo();
 
   const [description, setDescription] = useState('');
   const { user } = useContext(UserContext);
@@ -18,6 +18,8 @@ export default function Todo() {
 
   const handleAdd = async () => {
     await createTodo(description);
+    setTodos(prev => [...prev, { description }]);
+    setDescription('');
   };
 
   return (
