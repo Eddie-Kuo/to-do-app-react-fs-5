@@ -3,17 +3,17 @@ import { getTodos } from '../../services/todo';
 
 export function useTodo() {
 // set state
-  const [todo, setTodo] = useState([]);
+  const [todos, setTodos] = useState([]);
 // use effect to fetch the data 
 // set the state with data 
   useEffect(() => {
 
     const loadData = async () => {
       const data = await getTodos();
-      setTodo(data);
+      setTodos(data);
     };
     loadData();
   }, []);
 
-  return { todo, setTodo };
+  return { todos };
 }

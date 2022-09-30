@@ -7,7 +7,7 @@ import './Todo.css';
 
 
 export default function Todo() {
-  const { todo } = useTodo();
+  const { todos } = useTodo();
 
   const [description, setDescription] = useState('');
   const { user } = useContext(UserContext);
@@ -31,10 +31,10 @@ export default function Todo() {
       <div className='container'>
         <h3>My To Do List:</h3>
         <div className='todo'>
-          <p>Task 1</p>
-          <p>Task 2</p>
-          <p>Task 3</p>
-          {/* todo.map to render a new element every time a new todo is added to the array */}
+          {todos.map((todo) => {
+            return <p key={todo.id}>{todo.description}</p>;
+          }
+          )}
         </div>
       </div>
     </>
