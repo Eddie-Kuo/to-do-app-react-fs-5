@@ -17,3 +17,5 @@ export function useTodo() {
 
   return { todos, setTodos };
 }
+
+// useEffect - escape hatch - job is to do everyhting on the side that the component doesnt already do - used as a result of the component being rendered 

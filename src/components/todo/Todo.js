@@ -1,14 +1,14 @@
 import { useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
-import { createTodo } from '../../services/todo';
+import { completeTodo, createTodo } from '../../services/todo';
 import { useTodo } from '../hooks/useTodo';
 import './Todo.css';
 
 
 export default function Todo() {
   const { todos, setTodos } = useTodo();
-
+//   console.log(todos);
   const [description, setDescription] = useState('');
   const { user } = useContext(UserContext);
 
@@ -17,9 +17,15 @@ export default function Todo() {
   }
 
   const handleAdd = async () => {
-    await createTodo(description);
-    setTodos(prev => [...prev, { description }]);
+    const { data } = await createTodo(description);
+    setTodos(prevState => [...prevState, data]);
     setDescription('');
+  };
+
+  const handleComplete = async (todo) => {
+    const { data } = await completeTodo(todo); 
+    setTodos(prevState => prevState.map(item => (item.id === data.id ?
+      data : item)));
   };
 
   return (
@@ -34,7 +40,12 @@ export default function Todo() {
         <h3>My To Do List:</h3>
         <div className='todo'>
           {todos.map((todo) => {
-            return <p key={todo.id}>{todo.description}</p>;
+            // console.log(todo);
+            return <p key={todo.id}>
+              <input type="checkbox" checked={todo.complete}
+                onClick={() => handleComplete(todo)}/>
+              {todo.description}
+            </p>;
           }
           )}
         </div>
@@ -42,3 +53,4 @@ export default function Todo() {
     </>
   );
 }
+

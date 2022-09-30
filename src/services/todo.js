@@ -8,5 +8,12 @@ export async function getTodos() {
 }
 
 export async function createTodo(description) {
-  return await client.from('todos').insert({ description });
+  return await client.from('todos').insert({ description }).single();
+}
+
+export async function completeTodo(todo) {
+  return await client.from('todos')
+    .update({ complete: true })
+    .match({ id : todo.id })
+    .single();
 }
