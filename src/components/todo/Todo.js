@@ -1,11 +1,13 @@
 import { useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
-import { createTodo, getTodos } from '../../services/todo';
+import { createTodo } from '../../services/todo';
+import { useTodo } from '../hooks/useTodo';
 import './Todo.css';
 
 
 export default function Todo() {
+  const { todo } = useTodo();
 
   const [description, setDescription] = useState('');
   const { user } = useContext(UserContext);
@@ -15,15 +17,7 @@ export default function Todo() {
   }
 
   const handleAdd = async () => {
-    // on click this function needs to run to send info to supabase 
     await createTodo(description);
-    // const newTodo = {
-    //   description: { todo },
-    //   complete: false
-    // };
-    // createTodo(newTodo);
-    const list = getTodos();
-    console.log(list);
   };
 
   return (
@@ -40,6 +34,7 @@ export default function Todo() {
           <p>Task 1</p>
           <p>Task 2</p>
           <p>Task 3</p>
+          {/* todo.map to render a new element every time a new todo is added to the array */}
         </div>
       </div>
     </>

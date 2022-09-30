@@ -4,7 +4,6 @@ import { client } from './client';
 
 export async function getTodos() {
   const response = await client.from('todos').select('*');
-  console.log(response);
   return response;
 }
 
