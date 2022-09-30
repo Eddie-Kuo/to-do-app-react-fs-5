@@ -1,31 +1,38 @@
 import { useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
+import { createTodo, getTodos } from '../../services/todo';
 import './Todo.css';
 
 
 export default function Todo() {
 
-  const [todo, setTodo] = useState('');
+  const [description, setDescription] = useState('');
   const { user } = useContext(UserContext);
 
   if (!user) {
     return <Redirect to="/auth/sign-in" />;
   }
 
-  const handleClick = async () => {
+  const handleAdd = async () => {
     // on click this function needs to run to send info to supabase 
-    // will also need to retrieve data to map out list of todos
-    // each todo will have a handlecomplete feature to mark as completed
+    await createTodo(description);
+    // const newTodo = {
+    //   description: { todo },
+    //   complete: false
+    // };
+    // createTodo(newTodo);
+    const list = getTodos();
+    console.log(list);
   };
 
   return (
     <>
       <div className='todo-form'>
-        <input value={todo} 
+        <input type="text" value={description} 
           placeholder="Enter your task"
-          onChange={(e) => setTodo(e.target.value)}></input>
-        <button onClick={handleClick} >Add</button>
+          onChange={(e) => setDescription(e.target.value)}></input>
+        <button onClick={handleAdd} >Add</button>
       </div>
       <div className='container'>
         <h3>My To Do List:</h3>
