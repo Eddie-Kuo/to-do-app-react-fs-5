@@ -11,6 +11,7 @@ function App() {
       <Header />
       
       <Switch>
+        <Route path="/" component={Auth}></Route>
         <Route path="/auth/:type" component={Auth}></Route>
         {/* <Route path="/auth/:sign-up" component={Auth}></Route> */}
         <Route path="/todo" component={Todo}></Route>
