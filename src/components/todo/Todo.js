@@ -18,6 +18,7 @@ export default function Todo() {
 
   const handleAdd = async () => {
     const { data } = await createTodo(description);
+    // createTodo returns an object so on line 20 we can destructure it and only get the data property we want
     setTodos(prevState => [...prevState, data]);
     setDescription('');
   };
@@ -27,6 +28,9 @@ export default function Todo() {
     setTodos(prevState => prevState.map(item => (item.id === data.id ?
       data : item)));
   };
+  // function setTodos with a parameter as a callback function 
+  // taking the previous state and mapping it out with item as the parameter
+  // if the id of the item matches the new object's id thats getting passed in, then show the new item (data) instead, otherwise show the original item
 
   return (
     <>
