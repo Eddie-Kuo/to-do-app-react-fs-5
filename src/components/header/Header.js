@@ -8,7 +8,6 @@ export default function Header() {
   // passing in user state with context
 
   const handleClick = async () => {
-    console.log('button clicked');
     await signOut();
     setUser(null);
   };
@@ -22,7 +21,6 @@ export default function Header() {
           <button onClick={handleClick} >Logout</button>
         </>
       )}
-      {/* This will only show if the user is logged in */}
     </header>
   );
 }

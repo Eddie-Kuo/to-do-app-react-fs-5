@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
-import { completeTodo, createTodo } from '../../services/todo';
+import { completeTodo, createTodo, deleteTodos, getTodos } from '../../services/todo';
 import { useTodo } from '../hooks/useTodo';
 import './Todo.css';
 
@@ -32,6 +32,11 @@ export default function Todo() {
   // taking the previous state and mapping it out with item as the parameter
   // if the id of the item matches the new object's id thats getting passed in, then show the new item (data) instead, otherwise show the original item
 
+  const handleDelete = async () => {
+    await deleteTodos();
+    setTodos(await getTodos());
+  };
+
   return (
     <>
       <div className='todo-form'>
@@ -40,6 +45,7 @@ export default function Todo() {
           onChange={(e) => setDescription(e.target.value)}></input>
         <button onClick={handleAdd} >Add</button>
       </div>
+      <button className='delete' onClick={handleDelete}>Delete Completed Todos</button>
       <div className='container'>
         <h3>My To Do List:</h3>
         <div className='todo'>
@@ -57,4 +63,3 @@ export default function Todo() {
     </>
   );
 }
-

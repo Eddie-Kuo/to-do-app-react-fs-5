@@ -18,7 +18,7 @@ export async function completeTodo(todo) {
     .single();
 }
 
-// export async function deleteTodos() {
-//   return await client.from('todos').delete('*')
-//     .match({ complete: true });
-// }
+export async function deleteTodos() {
+  return await client.from('todos').delete('*')
+    .match({ complete: true });
+}

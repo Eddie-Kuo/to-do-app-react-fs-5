@@ -30,3 +30,7 @@
 .todo p {
     margin: 1.5vh;
 }
+
+.delete {
+    margin: 5px;
+}
