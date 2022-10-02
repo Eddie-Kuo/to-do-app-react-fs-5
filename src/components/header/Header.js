@@ -8,9 +8,8 @@ export default function Header() {
   // passing in user state with context
 
   const handleClick = async () => {
-    console.log('button clicked');
-    // await signOut();
-    // setUser(null);
+    await signOut();
+    setUser(null);
   };
 
   return (
