@@ -1,0 +1,32 @@
+.header {
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aquamarine
+};
+
+.header h2 {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 4vh;
+}
+
+.header button {
+    margin: 4vh;
+}
+
+.header div {
+    /* width: 80%; */
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-right: 30vh;
+    margin-left: 30vh;
+}
+
+
