@@ -9,8 +9,8 @@ export default function Header() {
 
   const handleClick = async () => {
     console.log('button clicked');
-    await signOut();
-    setUser(null);
+    // await signOut();
+    // setUser(null);
   };
 
   return (
@@ -24,7 +24,6 @@ export default function Header() {
           </>
         )}
       </header>
-      <button onClick={handleClick}>log out</button>
     </>
   );
 }
