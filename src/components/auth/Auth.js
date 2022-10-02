@@ -29,9 +29,9 @@ export default function Auth() {
     <div className='auth'>
 
       <div className="tabs">
-        <NavLink to="/auth/sign-in">Sign In</NavLink>
+        <NavLink to="/auth/sign-in" className="link" activeStyle={{ textDecoration: 'underline' }}>Sign In</NavLink>
         {/* these need to be nav links  */}
-        <NavLink to="/auth/sign-up">Sign Up</NavLink>
+        <NavLink to="/auth/sign-up" className="link" activeStyle={{ textDecoration: 'underline' }}>Sign Up</NavLink>
       </div>
 
       <div className='form'>

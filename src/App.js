@@ -1,3 +1,4 @@
+import { Redirect } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 import './App.css';
@@ -14,7 +15,10 @@ function App() {
         <Route path="/auth/:type" component={Auth}></Route>
         {/* <Route path="/auth/:sign-up" component={Auth}></Route> */}
         <Route path="/todo" component={Todo}></Route>
-        <Route exact path="/" component={Auth}></Route>
+        <Route path="*">
+          <Redirect to="Auth/Auth"/>
+        </Route>
+        <Route path="/" component={Auth}></Route>
       </Switch>
     </div>
   );
